@@ -44,7 +44,7 @@
     'name': 'meta.option.choicescript'
   },
   {
-    'match': '(\\*comment.+$)'
+    'match': '(\\*comment.*$)'
     'name': 'comment.line.choicescript'
   },
   {
