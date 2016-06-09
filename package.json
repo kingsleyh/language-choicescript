@@ -1,0 +1,17 @@
+{
+  "name": "language-choicescript",
+  "version": "0.0.0",
+  "description": "Choicescript language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingsleyh/language-choicescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kingsleyh/language-choicescript/issues"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,77 @@
+'scopeName': 'source.choicescript'
+'name': 'Choicescript'
+'fileTypes': ['txt']
+
+'patterns': [
+  {
+    'match': '(\\*(scene_list|page_break|line_break|choice|finish|label|goto|goto_scene|gosub|gosub_scene|return|ending|image|if|else|elseif|temp|stat_chart|rand|input_number))\\b'
+    'name': 'entity.name.function.choicescript'
+  },
+  {
+    'match': '(\\*title)\\s+(.+)'
+    'captures':
+        '1':
+            'name': 'entity.name.function.choicescript'
+        '2':
+            'name': 'string.unquoted'
+    'name': 'meta.title.choicescript'
+  },
+  {
+    'match': '(\\*author)\\s+(.+)'
+    'captures':
+        '1':
+            'name': 'entity.name.function.choicescript'
+        '2':
+            'name': 'string.unquoted'
+    'name': 'meta.author.choicescript'
+  },
+  {
+    'match': '(\\*link)\\s+(.+)'
+    'captures':
+        '1':
+            'name': 'entity.name.function.choicescript'
+        '2':
+            'name': 'string.unquoted'
+    'name': 'meta.link.choicescript'
+  },
+  {
+    'match': '(\\#)(.+)'
+    'captures':
+        '1':
+            'name': 'entity.name.function.choicescript'
+        '2':
+            'name': 'string.unquoted'
+    'name': 'meta.option.choicescript'
+  },
+  {
+    'match': '(\\*comment.+$)'
+    'name': 'comment.line.choicescript'
+  },
+  {
+    'match': '(\\*create)\\s+(\\w+)\\s+(.+)'
+    'captures':
+        '1':
+            'name': 'entity.name.function.choicescript'
+        '2':
+            'name': 'keyword.control.choicescript'
+        '3':
+            'name': 'constant.numeric.choicescript'
+    'name': 'meta.create.choicescript'
+  },
+  {
+    'match': '(\\*set)\\s+(\\w+)\\s+(.+)'
+    'captures':
+        '1':
+            'name': 'entity.name.function.choicescript'
+        '2':
+            'name': 'keyword.control.choicescript'
+        '3':
+            'name': 'constant.numeric.choicescript'
+    'name': 'meta.set.choicescript'
+  },
+  {
+    'match': '(\\(|\\)|\\[|\\]|\\{|\\}|\\$|\\/|\\=|\\!|\\>|\\<|\\:)'
+    'name': 'constant.numeric.choicescript'
+  }
+
+]

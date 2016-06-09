@@ -1,0 +1,7 @@
+'.source.choicescript':
+  'choice':
+    'prefix': 'ch'
+    'body': '*choice $1'
+  'option':
+    'prefix': 'op'
+    'body': '#$1'
