@@ -72,6 +72,10 @@
   {
     'match': '(\\(|\\)|\\[|\\]|\\{|\\}|\\$|\\/|\\=|\\!|\\>|\\<|\\:)'
     'name': 'constant.numeric.choicescript'
+  },
+  {
+    'match': '".*?"'
+    'name': 'string.quoted'
   }
 
 ]

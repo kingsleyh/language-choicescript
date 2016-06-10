@@ -68,6 +68,11 @@ describe "ChoiceScript grammar", ->
     assertOperator('<')
     assertOperator(':')
 
+  it "tokenizes double quotes", ->
+    {tokens} = grammar.tokenizeLine('this is "cool" and "awesome" yeah')
+    expect(tokens[1]).toEqual value: '"cool"', scopes: ['source.choicescript', 'string.quoted']
+    expect(tokens[3]).toEqual value: '"awesome"', scopes: ['source.choicescript', 'string.quoted'] 
+
   assertOperator = (operator) ->
     {tokens} = grammar.tokenizeLine(operator)
     expect(tokens[0]).toEqual value: operator, scopes: ['source.choicescript', 'constant.numeric.choicescript']
