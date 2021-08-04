@@ -1,7 +1,35 @@
 '.source.choicescript':
-  'choice':
-    'prefix': 'ch'
-    'body': '*choice $1'
-  'option':
-    'prefix': 'op'
-    'body': '#$1'
+  'todo':
+    'prefix': 'todo'
+    'body': '*comment TODO:$1'
+  'comment':
+    'prefix': 'comment'
+    'body': '*comment $1'
+  'label':
+    'prefix': 'label'
+    'body': '*label $1'
+  'choice2':
+    'prefix': 'ch2'
+    'body': """
+    *choice
+        #$1
+            $3
+            *goto LABEL
+        #$2
+            $4
+            *goto LABEL
+     """
+  'choice3':
+    'prefix': 'ch3'
+    'body': """
+    *choice
+        #$1
+            $4
+            *goto LABEL
+        #$2
+            $5
+            *goto LABEL
+        #$3
+            $6
+            *goto LABEL
+    """
