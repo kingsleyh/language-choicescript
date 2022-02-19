@@ -1,7 +1,189 @@
 '.source.choicescript':
-  'choice':
-    'prefix': 'ch'
-    'body': '*choice $1'
-  'option':
-    'prefix': 'op'
-    'body': '#$1'
+  'todo':
+    'prefix': 'todo'
+    'body': '*comment TODO: $1'
+  'comment':
+    'prefix': 'comment'
+    'body': '*comment $1'
+  'create':
+    'prefix': 'create'
+    'body': '*create $1'
+  'label':
+    'prefix': 'label'
+    'body': '*label $1'
+  'goto':
+    'prefix': 'goto'
+    'body': '*goto $1'
+  'set':
+    'prefix': 'set'
+    'body': '*set $1'
+  'finish':
+    'prefix': 'finish'
+    'body': '*finish'
+  'return':
+    'prefix': 'return'
+    'body': '*return'
+  'achieve':
+    'prefix': 'achieve'
+    'body': '*achieve'
+  'check_achievements':
+    'prefix': 'check_achievements'
+    'body': '*check_achievements'
+  'achievement':
+    'prefix': 'achievement'
+    'body':"""
+    *achievement ${1:codename} visible ${2:points} ${3:title}
+    PRE_EARNED
+    POST_EARNED
+    """
+  'gosub':
+    'prefix': 'gosub'
+    'body': '*gosub $1'
+  'gosub_scene':
+    'prefix': 'gosub_scene'
+    'body': '*gosub_scene $1'
+  'page_break':
+    'prefix': 'page_break'
+    'body': '*page_break'
+  'line_break':
+    'prefix': 'line_break'
+    'body': '*line_break'
+  'multireplace':
+    'prefix': 'multi'
+    'body': '@{${1:var} ${2:TRUE}|${3:FALSE}}'
+  'if':
+    'prefix': 'if'
+    'body': """
+    *if ${1:cond}
+        TEXT1
+    """
+  'ife':
+    'prefix': 'ife'
+    'body': """
+    *if ${1:cond}
+        TEXT1
+    *if not (cond)
+        TEXT2
+    """
+  'choice2':
+    'prefix': 'ch2'
+    'body': """
+    *choice
+        #${1:option}
+
+            *goto LABEL
+        #${2:option}
+
+            *goto LABEL
+     """
+  'choice3':
+    'prefix': 'ch3'
+    'body': """
+    *choice
+        #${1:option}
+
+            *goto LABEL
+        #${2:option}
+
+            *goto LABEL
+        #${3:option}
+
+            *goto LABEL
+    """
+  'choice4':
+    'prefix': 'ch4'
+    'body': """
+    *choice
+        #${1:option}
+
+            *goto LABEL
+        #${2:option}
+
+            *goto LABEL
+        #${3:option}
+
+            *goto LABEL
+        #${4:option}
+
+            *goto LABEL
+    """
+  'choice5':
+    'prefix': 'ch5'
+    'body': """
+    *choice
+        #${1:option}
+
+            *goto LABEL
+        #${2:option}
+
+            *goto LABEL
+        #${3:option}
+
+            *goto LABEL
+        #${4:option}
+
+            *goto LABEL
+        #${5:option}
+
+            *goto LABEL
+    """
+  'fake_choice2':
+    'prefix': 'fakech2'
+    'body': """
+    *fake_choice
+        #${1:option}
+        #${2:option}
+    """
+  'fake_choice3':
+    'prefix': 'fakech3'
+    'body': """
+    *fake_choice
+        #${1:option}
+        #${2:option}
+        #${3:option}
+    """
+  'fake_choice4':
+    'prefix': 'fakech4'
+    'body': """
+    *fake_choice
+        #${1:option}
+        #${2:option}
+        #${3:option}
+        #${4:option}
+    """
+  'fake_choice5':
+    'prefix': 'fakech5'
+    'body': """
+    *fake_choice
+        #${1:option}
+        #${2:option}
+        #${3:option}
+        #${4:option}
+        #${5:option}
+    """
+  'loop':
+    'prefix': 'loop'
+    'body': """
+    *temp DONE 0
+    STARTTEXT
+    *label LABEL
+    *if DONE > 0
+        RETURNTEXT
+    *set DONE +1
+    *choice
+        #${1:option}
+
+            *goto LABEL
+        #${2:option}
+
+            *goto LABEL
+        #${3:option}
+
+            *goto LABEL
+        #${4:option}
+
+            *goto LABEL
+        #${5:option}
+
+            *goto LABEL
+    """
