@@ -4,9 +4,13 @@
 
 'patterns': [
   {
-    'match': '(\\*(scene_list|page_break|line_break|choice|finish|label|goto|goto_scene|gosub|gosub_scene|return|ending|image|if|else|elseif|temp|stat_chart|rand|input_number))\\b'
+    'match': '(\\*(scene_list|page_break|line_break|choice|finish|label|goto|goto_scene|gosub|gosub_scene|return|ending|image|if|else|elseif|temp|stat_chart|rand|input_number|fake_choice|allow_reuse|hide_reuse|disable_reuse))\\b'
     'name': 'entity.name.function.choicescript'
   },
+{
+  'match': '(\\*(allow_reuse|achievement|check_achievements|achieve|params))'
+  'name': 'entity.name.function.choicescript'
+},
   {
     'match': '(\\*title)\\s+(.+)'
     'captures':
@@ -68,14 +72,6 @@
         '3':
             'name': 'constant.numeric.choicescript'
     'name': 'meta.set.choicescript'
-  },
-  {
-    'match': '(\\(|\\)|\\[|\\]|\\{|\\}|\\$|\\/|\\=|\\!|\\>|\\<|\\:)'
-    'name': 'constant.numeric.choicescript'
-  },
-  {
-    'match': '".*?"'
-    'name': 'string.quoted'
   }
 
 ]
